@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment/presentation/album_bloc/album_bloc.dart';
-import 'package:flutter_assignment/presentation/album_bloc/album_state.dart';
-import 'package:flutter_assignment/presentation/photo_bloc/photo_bloc.dart';
+import 'package:flutter_assignment/presentation/bloc/album_bloc/album_bloc.dart';
+import 'package:flutter_assignment/presentation/bloc/album_bloc/album_state.dart';
+import 'package:flutter_assignment/presentation/bloc/photo_bloc/photo_bloc.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
