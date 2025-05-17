@@ -4,7 +4,7 @@ import 'package:flutter_assignment/data/models/album_model.dart';
 class ApiService {
   final Dio dio;
 
-  ApiService({required this.dio});
+  ApiService(this.dio);
 
   Future<List<AlbumModel>> getAlbums() async {
     final response = await dio.get('/albums');
