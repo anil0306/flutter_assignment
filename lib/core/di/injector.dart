@@ -4,7 +4,9 @@ import 'package:flutter_assignment/data/datasources/album_remote_datasource.dart
 import 'package:flutter_assignment/data/repositories/album_repository_impl.dart';
 import 'package:flutter_assignment/domain/repositories/album_repository.dart';
 import 'package:flutter_assignment/domain/usecases/get_albums.dart';
-import 'package:flutter_assignment/presentation/blocs/album_bloc.dart';
+import 'package:flutter_assignment/domain/usecases/get_photos.dart';
+import 'package:flutter_assignment/presentation/album_bloc/album_bloc.dart';
+import 'package:flutter_assignment/presentation/photo_bloc/photo_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 final sl = GetIt.instance;
@@ -14,7 +16,7 @@ void initDependencies() {
     () => Dio(BaseOptions(baseUrl: 'https://jsonplaceholder.typicode.com')),
   );
 
-  sl.registerLazySingleton<ApiService>(() => ApiService(sl())); // SECOND
+  sl.registerLazySingleton<ApiService>(() => ApiService(sl()));
 
   // Data Layer
   sl.registerLazySingleton<AlbumRemoteDataSource>(
@@ -24,8 +26,9 @@ void initDependencies() {
 
   // Use Cases
   sl.registerLazySingleton(() => GetAlbums(sl()));
-  // sl.registerLazySingleton(() => GetPhotos(sl()));
+  sl.registerLazySingleton(() => GetPhotos(sl()));
 
   // Bloc
   sl.registerFactory(() => AlbumBloc(sl()));
+  sl.registerFactory(() => PhotoBloc(sl()));
 }

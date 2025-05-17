@@ -1,6 +1,6 @@
 import 'package:flutter_assignment/domain/usecases/get_albums.dart';
-import 'package:flutter_assignment/presentation/blocs/album_event.dart';
-import 'package:flutter_assignment/presentation/blocs/album_state.dart';
+import 'package:flutter_assignment/presentation/album_bloc/album_event.dart';
+import 'package:flutter_assignment/presentation/album_bloc/album_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AlbumBloc extends Bloc<AlbumEvent, AlbumState> {
