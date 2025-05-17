@@ -1,11 +1,9 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_assignment/data/models/album_model.dart';
+import 'package:flutter_assignment/domain/entities/album.dart';
 
 abstract class AlbumState extends Equatable {
-  const AlbumState();
-
   @override
-  List<Object?> get props => [];
+  List<Object> get props => [];
 }
 
 class AlbumInitial extends AlbumState {}
@@ -13,19 +11,19 @@ class AlbumInitial extends AlbumState {}
 class AlbumLoading extends AlbumState {}
 
 class AlbumLoaded extends AlbumState {
-  final List<AlbumModel> albums;
+  final List<Album> albums;
 
-  const AlbumLoaded(this.albums);
+  AlbumLoaded(this.albums);
 
   @override
-  List<Object?> get props => [albums];
+  List<Object> get props => [albums];
 }
 
 class AlbumError extends AlbumState {
   final String message;
 
-  const AlbumError(this.message);
+  AlbumError(this.message);
 
   @override
-  List<Object?> get props => [message];
+  List<Object> get props => [message];
 }
